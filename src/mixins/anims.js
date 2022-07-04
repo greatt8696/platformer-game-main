@@ -2,6 +2,7 @@
 
 export default {
   isPlayingAnims(animsKey) {
-    return this.anims.isPlaying && this.anims.getCurrentKey() === animsKey;
+    // debugger
+    return this.anims.isPlaying && this.anims.getCurrentKey=== animsKey;
   }
 }

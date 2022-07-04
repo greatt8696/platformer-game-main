@@ -1,6 +1,6 @@
 
 
-import Phaser, { FacebookInstantGamesLeaderboard } from 'phaser';
+import Phaser from 'phaser';
 
 import PlayScene from './scenes/Play';
 import PreloadScene from './scenes/Preload';
@@ -55,10 +55,4 @@ const config = {
 
 // We need to wait until FB SDK is fully loeaded
 
-if (process.env.FB_ENV || process.env.NODE_ENV === 'production') {
-  FBInstant.initializeAsync().then(() => {
-    new Phaser.Game(config);
-  })
-} else {
-  new Phaser.Game(config);
-}
+new Phaser.Game(config);

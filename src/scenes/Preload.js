@@ -53,7 +53,7 @@ class Preload extends Phaser.Scene {
       frameWidth: 32, frameHeight: 64, spacing: 32
     })
 
-    this.load.spritesheet('player-throw', 'assets/player/throw_attack_sheet_1.png', {
+    this.load.spritesheet('player-throw', 'assets/player/throw_attack_sheet.png', {
       frameWidth: 32, frameHeight: 38, spacing: 32
     })
 
@@ -73,20 +73,11 @@ class Preload extends Phaser.Scene {
     this.load.audio('swipe', 'assets/music/swipe.wav');
     this.load.audio('coin-pickup', 'assets/music/coin_pickup.wav');
 
-    const prod = process.env.FB_ENV || process.env.NODE_ENV === 'production';
-
-    this.load.on('progress', value => {
-      prod && FBInstant.setLoadingProgress(value * 100);
-    })
+    const prod =  process.env.NODE_ENV
 
     this.load.once('complete', () => {
-      if (prod) {
-        FBInstant.startGameAsync().then(() => {
-          this.startGame();
-        })
-      } else {
+      
         this.startGame();
-      }
     })
   }
 
