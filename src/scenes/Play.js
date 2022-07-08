@@ -4,7 +4,6 @@ import Enemies from '../groups/Enemies';
 import Collectables from '../groups/Collectables';
 import Hud from '../hud';
 import EventEmitter from '../events/Emitter';
-
 import initAnims from '../anims';
 
 class Play extends Phaser.Scene {
@@ -14,6 +13,8 @@ class Play extends Phaser.Scene {
   }
 
   create({ gameStatus }) {
+
+    
     this.score = 0;
     this.hud = new Hud(this, 0, 0);
 

@@ -76,7 +76,6 @@ class Preload extends Phaser.Scene {
     const prod =  process.env.NODE_ENV
 
     this.load.once('complete', () => {
-      
         this.startGame();
     })
   }
